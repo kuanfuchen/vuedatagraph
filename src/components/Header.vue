@@ -1,6 +1,6 @@
 <template>
   <div id="header">
-    <div class="container">
+    <div class="">
       <div class="d-flex pt-2 align-items-center">
         <div class="">
           <img src="../assets/img/Logo.png" />
