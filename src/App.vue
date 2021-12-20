@@ -21,11 +21,8 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
   // text-align: center;
   // color: #2c3e50;
-}
-.bg {
-  background-color: #28234c;
-  height: 100vh;
 }
 </style>
