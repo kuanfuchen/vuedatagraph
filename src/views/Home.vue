@@ -43,6 +43,8 @@
             <div id="ageBar"></div>
           </div>
         </div>
+        <div class="col-6 px-2" style="background-color: #28234c"></div>
+        <div class="col-6 px-2" style="background-color: #28234c"></div>
       </div>
     </div>
   </div>
