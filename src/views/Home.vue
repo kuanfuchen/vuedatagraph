@@ -27,43 +27,37 @@
     </nav>
     <div class="d-flex justify-content-center mt-3">
       <div class="row container" v-if="activeBtn === 'baseData'">
-        <div class="col-6 px-2" style="background-color: #28234c">
+        <div class="col-md-6 col-12 px-2" style="background-color: #28234c">
           <div class="cardBg">
-            <!-- <template> -->
-            <!-- <BarChart
-              :chartData="customChartData"
-              :options="options"
-            ></BarChart> -->
             <div id="areaBar"></div>
-            <!-- </template> -->
           </div>
         </div>
-        <div class="col-6 px-2" style="background-color: #28234c">
+        <div class="col-md-6 col-12 px-2" style="background-color: #28234c">
           <div class="cardBg">
             <div id="ageBar"></div>
           </div>
         </div>
-        <div class="col-4 px-2 mt-3" style="background-color: #28234c">
+        <div
+          class="col-md-4 col-12 px-2 mt-3"
+          style="background-color: #28234c"
+        >
           <div class="cardBg">
             <div id="sexPie"></div>
           </div>
         </div>
-        <div class="col-8 px-2 mt-3" style="background-color: #28234c">
+        <div
+          class="col-md-8 col-12 px-2 mt-3"
+          style="background-color: #28234c"
+        >
           <div class="cardBg">
             <div id="departmentBar"></div>
           </div>
         </div>
       </div>
       <div class="row container" v-if="activeBtn === 'industry'">
-        <div class="col-6 px-2" style="background-color: #28234c">
+        <div class="col-md-6 col-12 px-2" style="background-color: #28234c">
           <div class="cardBg">
-            <!-- <template> -->
-            <!-- <BarChart
-              :chartData="customChartData"
-              :options="options"
-            ></BarChart> -->
             <div></div>
-            <!-- </template> -->
           </div>
         </div>
         <div class="col-12 px-2" style="background-color: #28234c">
@@ -89,10 +83,6 @@
 <script>
 // @ is an alias to /src
 import FrontendJson from "./jsonData/frontend_data.json";
-// import "https://cdn.plot.ly/plotly-2.8.1.min.js";
-// import { Bar } from "vue-chartjs";
-// import BarChart from "../components/LineChart.vue";
-// import Plotly from "plotly.js-dist-min";
 import Plotly from "plotly.js/dist/plotly";
 export default {
   name: "Home",
@@ -159,6 +149,9 @@ export default {
         font: {
           color: "#F2F2F4",
         },
+        yaxis: {
+          title: "人數",
+        },
       };
       Plotly.newPlot("areaBar", areaData, layout, { responsive: true });
     },
@@ -186,6 +179,9 @@ export default {
         title: "年齡",
         font: {
           color: "#F2F2F4",
+        },
+        yaxis: {
+          title: "人數",
         },
       };
       Plotly.newPlot("ageBar", data, layout, { responsive: true });
@@ -240,6 +236,9 @@ export default {
         font: {
           color: "#F2F2F4",
         },
+        yaxis: {
+          title: "人數",
+        },
       };
       Plotly.newPlot("departmentBar", data, layout, { responsive: true });
     },
@@ -267,6 +266,9 @@ export default {
         title: "年資",
         font: {
           color: "#F2F2F4",
+        },
+        yaxis: {
+          title: "人數",
         },
       };
       Plotly.newPlot("yearseniority", data, layout, { responsive: true });
@@ -296,6 +298,9 @@ export default {
         font: {
           color: "#F2F2F4",
         },
+        yaxis: {
+          title: "人數",
+        },
       };
       Plotly.newPlot("yearsalary", data, layout, { responsive: true });
     },
@@ -322,6 +327,9 @@ export default {
         title: "產業分布",
         font: {
           color: "#F2F2F4",
+        },
+        yaxis: {
+          title: "人數",
         },
       };
       Plotly.newPlot("companyindustry", data, layout, { responsive: true });
