@@ -147,9 +147,20 @@ export default {
           x: area,
           y: areapersonnum,
           type: "bar",
+          marker: {
+            color: "#8E7DFA",
+          },
         },
       ];
-      Plotly.newPlot("areaBar", areaData, { title: "地區" });
+      const layout = {
+        plot_bgcolor: "#080231",
+        paper_bgcolor: "#080231",
+        title: "地區",
+        font: {
+          color: "#F2F2F4",
+        },
+      };
+      Plotly.newPlot("areaBar", areaData, layout, { responsive: true });
     },
     agePlotlyFn() {
       const agedata = Object.entries(this.dataAge);
@@ -164,9 +175,20 @@ export default {
           x: agetitle,
           y: age,
           type: "bar",
+          marker: {
+            color: "#8E7DFA",
+          },
         },
       ];
-      Plotly.newPlot("ageBar", data, { title: "年齡" });
+      const layout = {
+        plot_bgcolor: "#080231",
+        paper_bgcolor: "#080231",
+        title: "年齡",
+        font: {
+          color: "#F2F2F4",
+        },
+      };
+      Plotly.newPlot("ageBar", data, layout, { responsive: true });
     },
     sexPlotFn() {
       const sexualData = Object.entries(this.dataSexual);
@@ -183,7 +205,15 @@ export default {
           type: "pie",
         },
       ];
-      Plotly.newPlot("sexPie", data, { title: "性別" });
+      const layout = {
+        plot_bgcolor: "#080231",
+        paper_bgcolor: "#080231",
+        title: "性別比例",
+        font: {
+          color: "#F2F2F4",
+        },
+      };
+      Plotly.newPlot("sexPie", data, layout, { responsive: true });
     },
     departmentFn() {
       const department = Object.entries(this.dataDepartment);
@@ -198,9 +228,20 @@ export default {
           y: departNum,
           x: departName,
           type: "bar",
+          marker: {
+            color: "#8E7DFA",
+          },
         },
       ];
-      Plotly.newPlot("departmentBar", data, { title: "學歷與科系" });
+      const layout = {
+        plot_bgcolor: "#080231",
+        paper_bgcolor: "#080231",
+        title: "學歷與科系",
+        font: {
+          color: "#F2F2F4",
+        },
+      };
+      Plotly.newPlot("departmentBar", data, layout, { responsive: true });
     },
     seniorityFn() {
       // this.yearSeniority
@@ -215,9 +256,20 @@ export default {
           x: yearTitle,
           y: yearNum,
           type: "bar",
+          marker: {
+            color: "#8E7DFA",
+          },
         },
       ];
-      Plotly.newPlot("yearseniority", data, { title: "年資" });
+      const layout = {
+        plot_bgcolor: "#080231",
+        paper_bgcolor: "#080231",
+        title: "年資",
+        font: {
+          color: "#F2F2F4",
+        },
+      };
+      Plotly.newPlot("yearseniority", data, layout, { responsive: true });
     },
     salaryFn() {
       const salaryObj = Object.entries(this.salary);
@@ -232,9 +284,20 @@ export default {
           x: salaryTitle,
           y: salaryNum,
           type: "bar",
+          marker: {
+            color: "#8E7DFA",
+          },
         },
       ];
-      Plotly.newPlot("yearsalary", data, { title: "年薪" });
+      const layout = {
+        plot_bgcolor: "#080231",
+        paper_bgcolor: "#080231",
+        title: "年薪",
+        font: {
+          color: "#F2F2F4",
+        },
+      };
+      Plotly.newPlot("yearsalary", data, layout, { responsive: true });
     },
     industryFn() {
       const industryObj = Object.entries(this.companyIndustry);
@@ -253,7 +316,15 @@ export default {
           textinfo: "none",
         },
       ];
-      Plotly.newPlot("companyindustry", data, { title: "產業分布" });
+      const layout = {
+        plot_bgcolor: "#080231",
+        paper_bgcolor: "#080231",
+        title: "產業分布",
+        font: {
+          color: "#F2F2F4",
+        },
+      };
+      Plotly.newPlot("companyindustry", data, layout, { responsive: true });
     },
   },
 
