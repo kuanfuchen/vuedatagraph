@@ -25,20 +25,26 @@
         </div>
       </form>
     </nav>
-    <div class="d-flex justify-content-center mt-3">
+    <div class="d-flex justify-content-center">
       <div class="row container" v-if="activeBtn === 'baseData'">
-        <div class="col-md-6 col-12 px-2" style="background-color: #28234c">
+        <div
+          class="col-md-6 col-12 px-2 mt-2"
+          style="background-color: #28234c"
+        >
           <div class="cardBg">
             <div id="areaBar"></div>
           </div>
         </div>
-        <div class="col-md-6 col-12 px-2" style="background-color: #28234c">
+        <div
+          class="col-md-6 col-12 px-2 mt-2"
+          style="background-color: #28234c"
+        >
           <div class="cardBg">
             <div id="ageBar"></div>
           </div>
         </div>
         <div
-          class="col-md-4 col-12 px-2 mt-3"
+          class="col-md-4 col-12 px-2 mt-2"
           style="background-color: #28234c"
         >
           <div class="cardBg">
@@ -46,31 +52,34 @@
           </div>
         </div>
         <div
-          class="col-md-8 col-12 px-2 mt-3"
+          class="col-md-8 col-12 px-2 mt-2"
           style="background-color: #28234c"
         >
           <div class="cardBg">
-            <div id="departmentBar"></div>
+            <div class="ps-3" id="departmentBar"></div>
           </div>
         </div>
       </div>
       <div class="row container" v-if="activeBtn === 'industry'">
-        <div class="col-md-6 col-12 px-2" style="background-color: #28234c">
+        <div
+          class="col-md-6 col-12 px-2 mt-2"
+          style="background-color: #28234c"
+        >
           <div class="cardBg">
             <div></div>
           </div>
         </div>
-        <div class="col-12 px-2" style="background-color: #28234c">
+        <div class="col-12 px-2 mt-2" style="background-color: #28234c">
           <div class="cardBg">
             <div id="yearseniority"></div>
           </div>
         </div>
-        <div class="col-12 px-2 mt-3" style="background-color: #28234c">
+        <div class="col-12 px-2 mt-2" style="background-color: #28234c">
           <div class="cardBg">
             <div id="yearsalary"></div>
           </div>
         </div>
-        <div class="col-12 px-2 mt-3" style="background-color: #28234c">
+        <div class="col-12 px-2 mt-2" style="background-color: #28234c">
           <div class="cardBg">
             <div id="companyindustry"></div>
           </div>
@@ -93,7 +102,7 @@ export default {
     return {
       activeBtn: "baseData",
       frontendJson: FrontendJson,
-      uiJson: [],
+
       dataArea: {},
       dataSexual: {},
       dataAge: {},
@@ -114,7 +123,7 @@ export default {
         this.agePlotlyFn();
         this.sexPlotFn();
         this.departmentFn();
-      }, 1000);
+      }, 300);
     },
     industryPlotFn() {
       this.activeBtn = "industry";
@@ -122,7 +131,7 @@ export default {
         this.seniorityFn();
         this.salaryFn();
         this.industryFn();
-      }, 1000);
+      }, 300);
     },
     areaChartFn() {
       const areadata = Object.entries(this.dataArea);
@@ -221,12 +230,13 @@ export default {
       }
       const data = [
         {
-          y: departNum,
-          x: departName,
+          x: departNum,
+          y: departName,
           type: "bar",
           marker: {
             color: "#8E7DFA",
           },
+          orientation: "h",
         },
       ];
       const layout = {
@@ -236,7 +246,7 @@ export default {
         font: {
           color: "#F2F2F4",
         },
-        yaxis: {
+        xaxis: {
           title: "人數",
         },
       };
@@ -337,7 +347,6 @@ export default {
   },
 
   mounted() {
-    console.log(this.frontendJson);
     let jobTenure = [];
     let salary = [];
     let industry = [];
@@ -361,7 +370,7 @@ export default {
       if (noneInfoGroup !== -1) {
         this.dataDepartment["資訊科系相關"]++;
       }
-      // console.log(this.frontendJson[i].company.job_tenure);
+
       if (!jobTenure[this.frontendJson[i].company.job_tenure]) {
         jobTenure[this.frontendJson[i].company.job_tenure] = 1;
       } else {
@@ -386,13 +395,11 @@ export default {
     }
     this.salary = salary;
     this.companyIndustry = industry;
-    console.log(this.companyIndustry);
-    console.log(this.yearSeniority);
-    console.log(salary);
+
     this.dataDepartment["非資訊科系相關"] =
       Number(this.frontendJson.length) -
       Number(this.dataDepartment["資訊科系相關"]);
-    // console.log(this.dataDepartment);
+
     this.areaChartFn();
     this.agePlotlyFn();
     this.sexPlotFn();
