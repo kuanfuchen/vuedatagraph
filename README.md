@@ -3,6 +3,8 @@
 ## Project setup
 ```
 npm install
+chart.js
+plotly.js
 ```
 
 ### Compiles and hot-reloads for development
