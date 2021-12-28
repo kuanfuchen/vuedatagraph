@@ -5,6 +5,8 @@
 npm install
 chart.js
 plotly.js
+axios.js
+vue-axios.js
 ```
 
 ### Compiles and hot-reloads for development
